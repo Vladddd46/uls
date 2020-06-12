@@ -1,7 +1,7 @@
 #include "uls.h"
 
 char* mx_file_mode_add(struct stat Stat, char *mode) {
-	mode[1] = Stat.st_mode & MX_S_IRUSR ? 'r' : '-';
+    mode[1] = Stat.st_mode & MX_S_IRUSR ? 'r' : '-';
     mode[2] = Stat.st_mode & MX_S_IWUSR ? 'w' : '-';
     mode[3] = Stat.st_mode & MX_S_IXUSR ? 'x' : '-';
     mode[4] = Stat.st_mode & MX_S_IRGRP ? 'r' : '-';

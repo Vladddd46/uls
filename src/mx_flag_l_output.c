@@ -1,19 +1,12 @@
 #include "uls.h"
 
-/*------------------------------
-Need to be fixed with leaks.
-All leaks are in linked functions,
-from other files.
--------------------------------*/
 
-//---------------------------------------------------
-
-/*------------------------------
-Function returns int array on the 
-longest data outputed in flag -l
-for every type of data
-(mode, links, user...)
--------------------------------*/
+/*
+ * Function returns int array on the 
+ * longest data outputed in flag -l
+ * for every type of data
+ * (mode, links, user...)
+ */
 static int* get_each_data_length(t_files* list, char* d, int* l) {
     t_files *tmp = list;
 
@@ -45,14 +38,14 @@ static void print_links(t_files *list, char *dir, char *flags) {
     free(path);
 }
 
-/*------------------------------
-Main function, ouputs flag -l 
-data and spaces after. To change
-spaces beetween any type of 
-output, just change last argument
-in mx_print_space_after, this is
-max amount of spaces
--------------------------------*/
+/*
+ * Main function, ouputs flag -l 
+ * data and spaces after. To change
+ * spaces beetween any type of 
+ * output, just change last argument
+ * in mx_print_space_after, this is
+ * max amount of spaces.
+ */
 void mx_flag_l_output(t_files *l, char *dir, char *flags) {
     int length_all[9] = {0, 0, 0, 0, 0, 0};
     int length_file[8] = {0, 0, 0, 0, 0, 0};

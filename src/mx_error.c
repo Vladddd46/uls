@@ -1,9 +1,7 @@
 #include "uls.h"
 
-/*
-    * Check dir_name for being bad file descriptor(errno 9)
-*/
 
+// Check dir_name for being bad file descriptor(errno 9)
 static int bad_descriptor(char *dir_name) { 
     errno = 0;
     DIR *dir_opn = opendir(dir_name);
@@ -22,10 +20,9 @@ static int bad_descriptor(char *dir_name) {
 }
 
 /* 
-    * This function handles all errors, 
-        which was not handled specifically before
-*/
-
+ * This function handles all errors, 
+ *which was not handled specifically before
+ */
 static int all_errors(char *dir_name) {
     errno = 0;
     DIR *dir = opendir(dir_name);
@@ -50,11 +47,10 @@ static int all_errors(char *dir_name) {
 }
 
 /*
-    This function handles errors and if they
-    exist, return 1
-    otherwise return 0
-*/
-
+ * This function handles errors and if they
+ * exist, return 1
+ * otherwise return 0
+ */
 int mx_error(char *dir_name) {
     if (mx_permission_denied(dir_name))
         return 1;

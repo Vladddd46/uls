@@ -1,6 +1,6 @@
 #include "uls.h"
 
-int* mx_longest_devs(t_files* list, char* directory_name, int* length) {
+int *mx_longest_devs(t_files* list, char* directory_name, int* length) {
     t_files* tmp = list;
     char* mode;
 

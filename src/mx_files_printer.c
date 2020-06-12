@@ -1,10 +1,9 @@
 #include "uls.h"
 
 /*
-    * This is help function, which is used in Debug goals
-    in order to print list (t_files)
-*/
-
+ * This is help function, which is used in Debug goals
+ * in order to print list (t_files)
+ */
 void mx_files_printer(t_files *files) {
     
     t_files *tmp = files;

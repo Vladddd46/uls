@@ -1,9 +1,6 @@
 #include "uls.h"
 
-/*
-    function find the last slash index
-*/
-
+// Finds the last slash index.
 static int last_slash_finder(char *file_path) {
     int len = mx_strlen(file_path) - 2;
 
@@ -17,12 +14,11 @@ static int last_slash_finder(char *file_path) {
 }
 
 /*
-    * This function retrieves file_name from file_path
-    * Example:
-    Input: ../dir1/dir2/dir3/dir4/dir5/dirx/file
-    Output: file
-*/
-
+ * This function retrieves file_name from file_path
+ * Example:
+ * Input: ../dir1/dir2/dir3/dir4/dir5/dirx/file
+ * Output: file
+ */
 char *mx_file_name_retriever(char *file_path) {
     int last_slash_index;
     int x;

@@ -1,9 +1,6 @@
 #include "uls.h"
 
-/*
-    Implementation of -1 flag
-*/
-
+// Implementation of -1 flag
 void mx_minus_one(t_files *files, char *flags, char *dir) {
     t_files *tmp = files;
 

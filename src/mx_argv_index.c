@@ -1,15 +1,15 @@
 #include "uls.h"
 
 /*
-    * This function finds argv index of specified directory/file.
-    * User >>> ./uls -Ra dir1 dir2 dir2
-      Output: 2
-    * User >>> ./uls file1
-      Output: 1
-    * In case of no specified directories/files returns 0
-    * User >>> ./uls -la
-      Output: 0
-*/
+ * Finds argv index of specified directory/file.
+ * User >>> ./uls -Ra dir1 dir2 dir2
+ *   Output: 2
+ * User >>> ./uls file1
+ *  Output: 1
+ * In case of no specified directories/files returns 0
+ * User >>> ./uls -la
+ *      Output: 0
+ */
 
 int mx_argv_index(int argc, char *argv[]) {
     int argv_index = 0;

@@ -1,12 +1,11 @@
 #include "uls.h"
 
 /*
-    * This function creates t_files list.
-    * It represents all files contained in the directory dir_name.
-*/
-
+ * Creates t_files list.
+ * It represents all files contained in the directory dir_name.
+ */
 t_files *mx_files_list_maker(char *dir_name, char *flags) {
-    char* path = NULL;
+    char *path = NULL;
     t_files *files = mx_create_tfiles(NULL);
     char **list_of_files;
 

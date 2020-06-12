@@ -1,9 +1,7 @@
 #include "uls.h"
 
-/*
-    * Check dir_name for being bad file descriptor(errno 9)
-*/
 
+// Check dir_name for being bad file descriptor(errno 9)
 static int bad_descriptor(char *dir_name) {    
     errno = 0;
     DIR *dir_opn = opendir(dir_name);
@@ -24,10 +22,9 @@ static int bad_descriptor(char *dir_name) {
 }
 
 /* 
-    Error message
-    File/Directory does not exists
-*/
-
+ * Error message
+ * File/Directory does not exists
+ */
 static void mx_file_or_directory_not_exists(char *file) {
     errno = 2;
     char *text1 = "uls: ";
@@ -37,19 +34,13 @@ static void mx_file_or_directory_not_exists(char *file) {
     errno = 0;
 }
 
-/*
-    * Checks whether file is accessible
-    * used only to check, whether return value = 0 / 1 
-    * printing error message implemented in src/directories/mx_error.c
-*/
-
+// Checks whether file is accessible
 static int permission_denied_check(char *dir_name) {
     errno = 0;
     DIR *dir = opendir(dir_name);
 
-    if (errno == 0) {
+    if (errno == 0)
         closedir(dir);
-    }
     else if (errno == 13) {
         free(dir);
         return 1;
@@ -59,20 +50,15 @@ static int permission_denied_check(char *dir_name) {
     return 0;
 }
 
-/*
-	* Prints error messages
-*/
-
+// Prints error messages
 int mx_error_printer(char *dir_name) {
-    if (permission_denied_check(dir_name)) {
+    if (permission_denied_check(dir_name))
         return 1;
-    }
     else if (mx_file_exists(dir_name) == 0) {
         mx_file_or_directory_not_exists(dir_name);
         return 1;
     }
-    else if (bad_descriptor(dir_name)){
+    else if (bad_descriptor(dir_name))
         return 1;
-    } 
     return 0;
 }

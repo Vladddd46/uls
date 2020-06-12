@@ -1,9 +1,6 @@
 #include "uls.h"
 
-/* 
-    This func. pushes back t_dirs node in list t_dirs 
-*/
-
+// Pushes back t_dirs node in list t_dirs 
 void mx_push_back_tdirs(t_dirs **list, char *dir_name) {
     t_dirs *node;
     t_dirs *last_element;

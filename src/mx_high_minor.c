@@ -1,7 +1,7 @@
 #include "uls.h"
 
-static char* add_oct_prefix(char* string) {
-    char* name = mx_strnew(10);
+static char *add_oct_prefix(char* string) {
+    char *name = mx_strnew(10);
 
     name[0] = '0';
     name[1] = 'x';
@@ -31,9 +31,9 @@ static char* dec_hex(int decimalNumber, char* hexadecimalNumber) {
     return hexadecimalNumber;
 }
 
-char* mx_high_minor(char* hexadecimalNumber, 
-    t_files* list, char* major, char* minor) {
-    char* hex;
+char *mx_high_minor(char* hexadecimalNumber, 
+    t_files *list, char *major, char *minor) {
+    char *hex;
 
     hexadecimalNumber = mx_strnew(30);
     hex = dec_hex(MINOR(list -> stats.st_rdev), hexadecimalNumber);

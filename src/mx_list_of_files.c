@@ -1,11 +1,10 @@
 #include "uls.h"
 
 /* 
-    * Function, which adds / to the name of directory in case there is
-      no slash. If there is /, / is not added
-    * d_name argument is entry -> d_name
-*/
-
+ * Function, which adds / to the name of directory in case there is
+ *  no slash. If there is /, / is not added
+ * d_name argument is entry -> d_name
+ */
 static char *slash_adder(char *dir, char *d_name) {
     char *file_path;
 
@@ -18,10 +17,7 @@ static char *slash_adder(char *dir, char *d_name) {
     return file_path;
 }
 
-/*
-    Checks wether file is needed to be hide
-*/
-
+// Checks wether file is needed to be hide.
 static int is_to_hide(char *file_name, char *flags) {
     if (mx_is_in_arr(flags, 'a') == 0 && mx_is_in_arr(flags, 'A') == 0) {
       if (mx_strcmp(file_name, ".") == 0 
@@ -36,10 +32,8 @@ static int is_to_hide(char *file_name, char *flags) {
     return 0;
 }
 
-/*
-    * Counts the number of files in directory dir_name
-*/
 
+// Counts the number of files in directory dir_name.
 static int number_of_files(char *dir_name, char *flags) {
     DIR *dir_opn = opendir(dir_name);
     struct dirent *entry;
@@ -55,11 +49,10 @@ static int number_of_files(char *dir_name, char *flags) {
 }
 
 /* 
-    * Returns array of strings, which respresent all files contained 
-        in directory (dir_name).
-    * In case of permission denied for dir_name -> return NULL
-*/
-
+ * Returns array of strings, which respresent all files contained 
+ *  in directory (dir_name).
+ * In case of permission denied for dir_name -> return NULL
+ */
 char **mx_list_of_files(char *dir_name, char *flags, char* file_path) {
     int num_of_files = number_of_files(dir_name, flags);
     if (num_of_files == 0)

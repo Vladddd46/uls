@@ -1,15 +1,14 @@
 #include "uls.h"
 
 /* 
-   * Globally
-     This function findes flags, which user specified in his/her input.
-     In case of unsupportable flags specified, function returns NULL
-*/
-/* 
-    This func. returns starting index of specified flag. 
-    returns 0 if there is no flags specified
-*/
+ * Findes flags, which user specified in his/her input.
+ * In case of unsupportable flags specified, function returns NULL
+ */
 
+/* 
+ * This func. returns starting index of specified flag. 
+ * returns 0 if there is no flags specified
+ */
 static int flags_start(int argc, char **argv) {
     if (argc > 1) {
         if (argv[1][0] == '-')
@@ -19,10 +18,9 @@ static int flags_start(int argc, char **argv) {
 }
 
 /* 
-    This func. returns last index of specified flag. 
-    returns 0 if there is no flags specified
-*/
-
+ * Returns last index of specified flag. 
+ * returns 0 if there is no flags specified
+ */
 static int flags_end(int argc, char **argv) {
     int index = 0;
 
@@ -48,10 +46,7 @@ static void illegal_option(char option) {
     exit(1);
 }
 
-/* 
-    This func. finds errors in flag output 
-*/
-
+// Finds errors in flag output 
 static int wrong_flag_input(char **argv, 
     int start_index, int end_index) {
     int i = start_index;

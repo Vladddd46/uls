@@ -1,12 +1,6 @@
 #include "uls.h"
 
-/*
-    Permission denied error handler
-*/
-/*
-    * prints error message for "permission denied error"
-*/
-
+// Prints error message for "permission denied error"
 static void permission_denied_error(char *dir_name) {
     errno = 13;
     char *text1 = "uls: ";
@@ -16,10 +10,9 @@ static void permission_denied_error(char *dir_name) {
 }
 
 /*
-    * Checks whether file is accessible
-    * if no access -> return 1
-*/
-
+ * Checks whether file is accessible
+ * if no access -> return 1
+ */
 int mx_permission_denied(char *dir_name) {
     errno = 0;
     DIR *dir = opendir(dir_name);

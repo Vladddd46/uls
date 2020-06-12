@@ -1,7 +1,7 @@
 #include "uls.h"
 
-static char** sort_uls_help(int count, char *s[count], 
-                        char* fl[count], int cols) {
+static char **sort_uls_help(int count, char *s[count], 
+                        char *fl[count], int cols) {
     int in = 0;
     int mem = in;
     int rows = count / cols;
@@ -19,11 +19,8 @@ static char** sort_uls_help(int count, char *s[count],
     return s;
 }
 
-/*------------------------------
-Function sorts array for pure
-output
--------------------------------*/
 
+// Sorts array for pure output.
 char** mx_sort_output(int count, t_files* list, int cols, char *s[count]) {
     t_files* tmp = list;
     int i = 0;

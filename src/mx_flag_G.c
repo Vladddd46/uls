@@ -15,7 +15,7 @@ static char *three_joins(char *str1, char *str2, char *str3) {
 }
 
 static void change_filename(t_files* list, char* color) {
-    char* result = three_joins(color, list -> file_name, "\x1b[0m");
+    char *result = three_joins(color, list -> file_name, "\x1b[0m");
     
     mx_printstr(result);
     free(result);

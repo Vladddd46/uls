@@ -1,26 +1,24 @@
 #include "uls.h"
 
-/*------------------------------
-Function prints special number 
-of spaces after each mx_prinstr
-function usage
--------------------------------*/
-
+/*
+ * Function prints special number 
+ * of spaces after each mx_prinstr
+ * function usage.
+ */
 static void spaces(int len_diff1, int len_diff2, int standart_space) {
     for(int i = 1; i < standart_space + len_diff1 + len_diff2; i++)
         mx_printstr(" ");
 }
 
-/*------------------------------
-Function returns int array of 
-lenghtes of each output data in
-a single file, on witch we 
-reference in f_list* list node
-length of (mode, link, user...)
--------------------------------*/
-
-static int* get_curent_data_length(t_files* i, char* dir, int* l, int* a) {
-    char* del;
+/*
+ * Function returns int array of 
+ * lenghtes of each output data in
+ * a single file, on witch we 
+ * reference in f_list* list node
+ * length of (mode, link, user...)
+ */
+static int *get_curent_data_length(t_files* i, char* dir, int* l, int* a) {
+    char *del;
 
     l[0] = mx_strlen(mx_file_mode(i -> stats, i -> file_name, dir));
     l[1] = mx_getint_len(i -> stats.st_nlink);
@@ -35,9 +33,9 @@ static int* get_curent_data_length(t_files* i, char* dir, int* l, int* a) {
 }
 
 void mx_flag_l_out_add(t_files *l, char *dir, char *f, int l1[9], int l2[8]) {
-	char* del;
+    char *del;
 
-	get_curent_data_length(l, dir, l2, l1);
+    get_curent_data_length(l, dir, l2, l1);
     mx_printstr(mx_file_mode(l -> stats, l -> file_name, dir));
     spaces(l1[0] - l2[0], l1[1] - l2[1], 2);
     mx_printstr(mx_itoa(l -> stats.st_nlink));

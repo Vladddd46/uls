@@ -1,9 +1,6 @@
 #include "uls.h"
 
-/*------------------------------
-Function gets std(terminal) width
--------------------------------*/
-
+// Gets std(terminal) width
 static int get_std_width() {
     struct winsize w;
     int width;
@@ -13,10 +10,8 @@ static int get_std_width() {
     return width;
 }
 
-/*
-    * Implementation of flag -m in ls
-*/
 
+// Implementation of flag -m in ls
 void mx_flag_m(t_files *files, char *flags, char *dir) {
     t_files *tmp = files;
     int terminal_width = get_std_width();

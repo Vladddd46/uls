@@ -1,7 +1,7 @@
 #include "uls.h"
 
-int* mx_each_l_add(int* l, t_files* tmp, char* d) {
-    char* del;
+int *mx_each_l_add(int* l, t_files* tmp, char* d) {
+    char *del;
 
     if(mx_strlen(mx_file_mode(tmp -> stats, tmp -> file_name, d)) > l[0])
         l[0] = mx_strlen(mx_file_mode(tmp -> stats, tmp -> file_name, d));

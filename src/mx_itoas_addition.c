@@ -1,6 +1,6 @@
 #include "uls.h"
 
-char* mx_itoas_addition(int number, long number2, int len) {
+char *mx_itoas_addition(int number, long number2, int len) {
     char *result = mx_strnew(100);
 
     if(number < 0)

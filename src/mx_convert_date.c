@@ -1,6 +1,6 @@
 #include "uls.h"
 
-static char* replace_time_to_year(char* file_time, int file_year) {
+static char *replace_time_to_year(char* file_time, int file_year) {
     int clock_index = 8;
     char* file_year_string = mx_itoa(file_year);
 
@@ -11,7 +11,7 @@ static char* replace_time_to_year(char* file_time, int file_year) {
     return file_time;
 }
 
-static char* year_change(t_files* list, char* bf, int i, int j) {
+static char *year_change(t_files* list, char* bf, int i, int j) {
     long int file_secs_since_1970 = list->stats.st_mtime;
     long int now_secs_since_1970 = time(NULL);
     int file_year = (file_secs_since_1970 / 31536000) + 1970;
@@ -32,7 +32,7 @@ static char* year_change(t_files* list, char* bf, int i, int j) {
     return date;
 }
 
-char* mx_convert_date(char* buff, t_files* list) {
+char *mx_convert_date(char* buff, t_files* list) {
     int index = 0;
     int i = 0;
     char *result;

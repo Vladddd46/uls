@@ -1,9 +1,6 @@
 #include "uls.h"
 
-/*
-    * This function takes list files and frees.
-*/
-
+// Takes list files and frees.
 void mx_tfiles_freesher(t_files *files) {
     if (files) {
         while(files) {

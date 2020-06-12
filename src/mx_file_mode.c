@@ -18,7 +18,7 @@ static char mode_access(char *path, char *name, char* dir) {
 }
 
 char *mx_file_mode(struct stat Stat, char *name, char* path) {
-    char *mode = mx_strnew(11); // смотри 17 строку
+    char *mode = mx_strnew(11); 
     char *result;
     char* road = mx_three_join(path, "/", name);
 
@@ -26,7 +26,7 @@ char *mx_file_mode(struct stat Stat, char *name, char* path) {
     if (mx_link(road, Stat))
         mode[0] = 'l';
     mode = mx_file_mode_add(Stat, mode);
-    mode[10] = mode_access(road, name, path); //под @/+
+    mode[10] = mode_access(road, name, path);
     result = mode;
     free(road);
     free(mode);

@@ -1,18 +1,13 @@
 #include "uls.h"
 
-/* 
-    Checks wether file is link 
-*/
 /*
-    Function determines type of the file
-    return vulue:
-        d if directory
-        l if link
-        - if common file
-        s if socket ...
-        and so on
-*/
-
+ * Determines type of the file
+ *  return vulue:
+ *      d if directory
+ *      l if link
+ *      - if common file
+ *      s if socket
+ */
 char mx_file_type(char *file_path, struct stat Stat) {
     char type = '\0';
 

@@ -1,8 +1,8 @@
 #include "uls.h"
 
-/* 
-    Implementation of flag -R
-*/
+// Implementation of flag -R
+
+
 
 static void name_printer(char *dir_name, int checker) {
     if (checker != 0) {
@@ -11,10 +11,7 @@ static void name_printer(char *dir_name, int checker) {
     }
 }
 
-/* 
-    Main recursion function
-*/
-
+//  Main recursion function
 static void recursion_maker(char *dir_name, char *flags, int checker) {
     t_files *files = mx_files_list_maker(dir_name, flags);
     char **list_of_dir = mx_list_of_dirs(dir_name);;
@@ -38,10 +35,6 @@ static void recursion_maker(char *dir_name, char *flags, int checker) {
         mx_free_strarr(list_of_dir);
     }
 }
-
-/*
-    * First recursion func. (prerecursion)
-*/
 
 void mx_recursion(char **specified_dirs, char *flags) {
     int ch = 0;

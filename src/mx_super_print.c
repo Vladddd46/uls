@@ -23,34 +23,26 @@ static int flag_G_check(t_files* tmp, char* dir) {
     return ret;
 }
 
-
 static void print_tab(char* string, int space_size) {
     int tabs = (space_size - mx_strlen(string)) / 8;
 
-    // printf("%d\n", space_size);
     if((space_size - mx_strlen(string)) % 8 != 0)
         tabs++;
     for(int i = 1; i <= tabs; i++)
         write(1, "\t", 1);
-    // printf("!!!!!!%d", tabs);
 }
 
-/*------------------------------
-Function prints spaces after 
-each printed filename
--------------------------------*/
-
+// Prints spaces after each printed filename
 static void prints(char* string, int space_size) {
-	for(int i = 1; i < space_size - mx_strlen(string); i++)
+    for(int i = 1; i < space_size - mx_strlen(string); i++)
         mx_printstr(" ");
 }
 
-/*------------------------------
-Function finds the longest file-
-name in f_list and returns its 
-length 
--------------------------------*/
-
+/*
+ * Finds the longest file-
+ * name in f_list and returns its 
+ * length. 
+ */
 static int longs(t_files *list) {
     int longest_filename = 0;
     t_files* tmp = list;
@@ -64,8 +56,6 @@ static int longs(t_files *list) {
     }
     return longest_filename;
 }
-
-
 
 void mx_super_print(t_files *list, int i, char *arr[mx_count_list(list)],
     char *flags, char *dir) {
@@ -84,7 +74,7 @@ void mx_super_print(t_files *list, int i, char *arr[mx_count_list(list)],
         }
     }
     else {
-	    mx_printstr(arr[i]);
+        mx_printstr(arr[i]);
         print_tab(arr[i], longs(list) + (8 - (longs(list) % 8)));
     }
 }

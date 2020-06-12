@@ -1,11 +1,10 @@
 #include "uls.h"
 
 /* 
-    * Function, which adds / to the name of directory in case there is
-      no slash. If there is /, / is not added
-    * d_name argument is entry -> d_name
-*/
-
+ * Function, which adds / to the name of directory in case there is
+ *  no slash. If there is /, / is not added
+ * d_name argument is entry -> d_name
+ */
 static char *slash_adder(char *dir, char *d_name) {
     char *file_path;
 
@@ -18,10 +17,7 @@ static char *slash_adder(char *dir, char *d_name) {
     return file_path;
 }
 
-/* 
-    *Counts the number of directories in specified directory <dir> 
-*/
-
+// Counts the number of directories in specified directory <dir> 
 static int number_of_dirs(char *dir) {
     DIR *dir_opn = opendir(dir);
     struct dirent *entry;
@@ -44,10 +40,9 @@ static int number_of_dirs(char *dir) {
 }
 
 /*
-    This func. creates array of all directories(str data type),
-    that are located in directory <dir>
-*/
-
+ * Creates array of all directories(str data type),
+ * that are located in directory <dir>
+ */
 char **mx_list_of_dirs(char *dir) {
     int num_of_dirs = number_of_dirs(dir);
     if (num_of_dirs == 0)

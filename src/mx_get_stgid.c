@@ -1,6 +1,6 @@
 #include "uls.h"
 
-char* mx_get_stgid(t_files *list) {
+char *mx_get_stgid(t_files *list) {
     struct group *g = getgrgid(list -> stats.st_gid);
     char *result;
 

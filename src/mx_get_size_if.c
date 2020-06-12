@@ -15,8 +15,8 @@ static char *itoas(int number) {
 }
 
 static char* beetween_space(char* s1, int major, int max) {
-    char* result = mx_strnew(8);
-    char* output;
+    char *result = mx_strnew(8);
+    char *output;
 
     result[0] = ',';
     for(int i = 0; i < max - (((major + 1) + mx_strlen(s1))); i++)
@@ -25,11 +25,11 @@ static char* beetween_space(char* s1, int major, int max) {
     return output;
 }
 
-char* mx_get_size_if(t_files* list, char* hex, int* size_all) {
-    char* del;
-    char* result;
-    char* minor = itoas(MINOR(list -> stats.st_rdev));;
-    char* major;
+char *mx_get_size_if(t_files* list, char* hex, int* size_all) {
+    char *del;
+    char *result;
+    char *minor = itoas(MINOR(list -> stats.st_rdev));;
+    char *major;
 
     major = itoas(MAJOR(list -> stats.st_rdev));
     if(MINOR(list -> stats.st_rdev) > 255)

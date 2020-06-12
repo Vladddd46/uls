@@ -1,11 +1,13 @@
 #include "uls.h"
 
-/* 
-    This function creates t_files list node
-*/
-
+// This function creates t_files list node
 t_files *mx_create_tfiles(char *file_name) {
-    t_files *node = malloc(sizeof(t_files));
+    t_files *node = (t_files *)malloc(sizeof(t_files));
+    if (node == NULL) {
+        char *msg = "malloc error\n";
+        write(2, msg, mx_strlen(msg));
+        exit(1);
+    }
     struct stat stats;
     char *f_name;
 
