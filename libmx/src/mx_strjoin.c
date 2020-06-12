@@ -1,12 +1,11 @@
 #include "libmx.h"
 
 /* 
-    Function joins two strings
-    "Hello" "World" => "HelloWorld"
-    If first argument(s1) = NULL, func. returns second argument(s2)
-    If second arg.(s2) = NULL, func returns first arg.(s1)
-*/
-
+ *  Function joins two strings
+ *   "Hello" "World" => "HelloWorld"
+ *   If first argument(s1) = NULL, func. returns second argument(s2)
+ *   If second arg.(s2) = NULL, func returns first arg.(s1)
+ */
 static char *mx_strjoin_null_checker(char *s1, char *s2) {
     if(s1 == NULL && s2 != NULL) {
         int len = mx_strlen(s2);
@@ -38,11 +37,11 @@ char *mx_strjoin(char *s1, char *s2) {
     len_s1 = mx_strlen(s1);
     len_s2 = mx_strlen(s2);
     new_str = mx_strnew(len_s1 + len_s2);
-    for(int i = 0; i < len_s1; i++) {
+
+    for(int i = 0; i < len_s1; i++)
         new_str[i] = s1[i];
-    }
-    for(int i = len_s1; i < len_s1 + len_s2; i++) {
+
+    for(int i = len_s1; i < len_s1 + len_s2; i++)
         new_str[i] = s2[i - len_s1];
-    }
     return new_str;
 }

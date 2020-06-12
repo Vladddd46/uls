@@ -1,6 +1,10 @@
 #include "libmx.h"
 
-char* mx_link(char *file, struct stat sb) {
+/*
+ * Returns physical location of the link. 
+ * If not link -> NULL is returned.
+ */
+char *mx_link(char *file, struct stat sb) {
     char *buf;
     ssize_t nbytes;
     ssize_t bufsiz;

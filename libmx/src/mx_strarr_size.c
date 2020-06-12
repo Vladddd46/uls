@@ -1,9 +1,6 @@
 #include "libmx.h"
 
-/*
-    Counts size of str array
-*/
-
+// Counts size of array of strings.
 int mx_strarr_size(char **arr) {
     int counter = 0;
 

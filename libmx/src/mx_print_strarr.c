@@ -1,10 +1,6 @@
 #include "libmx.h"
 
-/* 
-    * This function prints array
-    char **strarr
-*/
-
+// Prints array of strs.
 void mx_print_strarr(char **strarr) {
     int i = 0;
 
