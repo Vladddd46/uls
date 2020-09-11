@@ -1,9 +1,4 @@
-* My own reimplementation of unix ls utility.
-* ls utility show list of files contained in directory.
-* Implemented flags: -a -A -R -m -p -1 -C -o -g -d.
-  Some flaxed can also be combined.
-* Date of creating: 10.02.2020.
+<h1>My re-implementation of unix <b>ls</b> utility</h1>
 
-#QUICKSTART
-Just write `make` and binary `uls` will be created.
-Use: `./uls` 
+
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/11888485/92944410-9ad46200-f45c-11ea-9e57-d3b4908e69f1.gif)
