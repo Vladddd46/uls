@@ -1,6 +1,6 @@
 <h1>My re-implementation of unix <b>ls</b> utility</h1>
 <p>For details about ls - <a href="https://en.wikipedia.org/wiki/Ls">Wiki</a><p>
- <p><b>Syntax:</b> ./uls [-flag (optional)] [directory_name1, ..., directory_nameX (optional, if no directory specified, current working directory is taken)]<p>
+ <p><b>Syntax:</b> ./uls [-flag (optional)] [directory_name1, ..., directory_nameX (optional, if no directory specified, current working directory is taken)]</p>
 <p>Features implemented:<p>
 <ul>
   <li><b>-a</b> flag - show all directories (also hidden - those, which start with dot)</li> 
