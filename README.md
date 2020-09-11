@@ -9,9 +9,9 @@
   <li><b>-p</b> flag - Write a slash (`/') after each filename if that file is a directory.</li>
   <li><b>-1</b> flag - Force output to be one entry per line. This is the default when output is not to a terminal.</li>
   <li><b>-C</b> flag - Force multi-column output; this is the default when output is to a terminal.</li>
-  
   <li><b>-o</b> flag - List in long format, but omit the group id.</li>
   <li><b>-g</b> flag - it is used to display the group name in the long (-l) format output  (the owner name is suppressed).</li>
+  <li><b>-d</b> flag - Directories are listed as plain files (not searched recursively).</li>
 </ul>
 
 
