@@ -15,6 +15,12 @@
   <li><b>-d</b> flag - Directories are listed as plain files (not searched recursively).</li>
 </ul>
 
+<h2>Compilation</h2>
+<ul> 
+ <li>To <b>compile</b> write <i><b>`make`</b></i> in root directory.</li>
+ <li><Compilation was done on MacOS. Other OS were not tested./li>
+</ul>
+
 
 <h3>Overview</h3>
 
